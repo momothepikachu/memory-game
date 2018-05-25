@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
 
@@ -17,70 +18,85 @@
 
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">3</span> Moves
-
+        	<span class="moves">0</span> Moves
+            <div class="timer"><i class="fas fa-stopwatch"></i> <span>0</span><span> s</span></div>
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+        		<i class="fas fa-redo"></i>
         	</div>
         </section>
 
         <ul class="deck">
             <li class="card">
-                <i class="fa fa-diamond"></i>
+                <i class="far fa-gem"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
+                <i class="far fa-paper-plane"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+                <i class="fas fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
+                <i class="fas fa-bolt"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+                <i class="fas fa-cube"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+                <i class="fas fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-diamond"></i>
+                <i class="fas fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
+                <i class="fas fa-bicycle"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+                <i class="far fa-gem"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
+                <i class="fas fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+                <i class="fas fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+                <i class="fas fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+                <i class="fas fa-bolt"></i>
+            </li>
+            <li class="card">
+                <i class="fas fa-bicycle"></i>
+            </li>
+            <li class="card">
+                <i class="far fa-paper-plane"></i>
+            </li>
+            <li class="card">
+                <i class="fas fa-cube"></i>
             </li>
         </ul>
     </div>
-
+    <!-- add modal -->
+    <div class="modal">
+        <div class="modal-content animated fadeInUpBig">
+            <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h2>Congratulations!</h2>
+            </div>
+            <div class="modal-body">
+                <p>You finished the game in <span class="modal-time">20</span> seconds!</p>
+                <p>You've scored <span class="modal-stars"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button">Play Again?</button>
+            </div>
+        </div>        
+    </div>
     <script src="js/app.js"></script>
 </body>
 </html>
