@@ -157,7 +157,7 @@ function flip() {
                     waitingList.forEach(function(item) { 
                         item.className = 'card match animated rubberBand'; // successful match css effect
                         openList.push(item) // add matching cards to openlist
-                        if (openList.length>=4) { // if # of open cards reach 16(all the cards are matched successfully)
+                        if (openList.length>=16) { // if # of open cards reach 16(all the cards are matched successfully)
                             clearInterval(stopWatch); // stop the stopwatch
                             modalPop(); //pop up the congratulation modal
                         }
