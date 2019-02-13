@@ -76,6 +76,7 @@ function timer() {
 
 function stopTimer() {
     clearInterval(stopWatch);
+    stopWatch = undefined;
 }
 
 // Restart the game when click the restart icon
@@ -145,7 +146,7 @@ function closeModal() {
 function flip() {
     document.querySelector('.deck').addEventListener('click', function(e) {
         let target = e.target;
-        if (document.querySelector('.timer').children[1].textContent == '0') {timer();}
+        if (document.querySelector('.timer').children[1].textContent == '0' && !stopWatch) {timer();}
         if (target.nodeName == 'LI' && !target.classList.contains('open') && !target.classList.contains('match') && countTwo<2) { // A card is clickable if it's LI but not 'open' or 'match', prevent repetitive clicking          
             count += 1; //increment clicking by 1
             countTwo += 1; //limit two cards to open
@@ -159,6 +160,7 @@ function flip() {
                         openList.push(item) // add matching cards to openlist
                         if (openList.length>=16) { // if # of open cards reach 16(all the cards are matched successfully)
                             clearInterval(stopWatch); // stop the stopwatch
+                            stopWatch = undefined;
                             modalPop(); //pop up the congratulation modal
                         }
                     })
@@ -197,5 +199,4 @@ window.onload = function() {
     flip();
     playAgain();
     closeModal();
-    clickToStart()
 }
