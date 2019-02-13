@@ -48,6 +48,7 @@ function shuffleCards() {
 
 // Click the restart button to shuffle/restart timer and stars
 function restart() {
+    console.log('restart!')
     shuffleCards();
     count = 0; //set # of clicking to 0
     openList = []; // reset opened cards
@@ -56,6 +57,7 @@ function restart() {
     reStar(); //restart adjusting stars scores
     document.querySelector('.timer').children[1].textContent = '0'; //set stopwatch to 0
     stopTimer();
+    countTwo=0
 }
 
 // Calculate total time of playing and update the stopwatch
@@ -146,8 +148,12 @@ function closeModal() {
 function flip() {
     document.querySelector('.deck').addEventListener('click', function(e) {
         let target = e.target;
+        console.log(target)
+        console.log(countTwo)
+        console.log(waitingList)
         if (document.querySelector('.timer').children[1].textContent == '0' && !stopWatch) {timer();}
-        if (target.nodeName == 'LI' && !target.classList.contains('open') && !target.classList.contains('match') && countTwo<2) { // A card is clickable if it's LI but not 'open' or 'match', prevent repetitive clicking          
+        if (target.nodeName == 'LI' && !target.classList.contains('open') && !target.classList.contains('match') && countTwo<2) { // A card is clickable if it's LI but not 'open' or 'match', prevent repetitive clicking   
+            console.log('can click?')       
             count += 1; //increment clicking by 1
             countTwo += 1; //limit two cards to open
             counting(); //counting clicks, shown on score-panel
